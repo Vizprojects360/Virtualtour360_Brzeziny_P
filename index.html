@@ -1,59 +1,14 @@
-<!DOCTYPE html>
+do tego html dodaj wszystko co potrzeba <!DOCTYPE html>
 <html>
 <head>
-<title>Mieszkanie 38 m² - Brzeziny</title>
+<title>Virtualtour360_Brzeziny_P</title>
 <meta charset="utf-8">
 <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
 <style> @-ms-viewport { width: device-width; } </style>
 <link rel="stylesheet" href="vendor/reset.min.css">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body class="multiple-scenes ">
-
-<script>
-const TOUR_CONFIG = {
-  pageTitle: "Mieszkanie 38 m² - Brzeziny",
-  eyebrow: "Wirtualna prezentacja nieruchomości",
-  propertyTitle: "Mieszkanie 38 m² - Brzeziny",
-
-  agentName: "Anna Janiszewska",
-  agentRole: "Pośrednik nieruchomości",
-  agentPhone: "534 128 789",
-  agentEmail: "anna.janiszewska@nieruchomosci.pl",
-
-  avatarPath: "branding/avatar.png",
-  coverPath: "branding/cover.jpg",
-
-  footerText: "Spacery 360° by Vizprojects",
-  footerUrl: "https://vizprojects.pl/Wirtualne-spacery-3D.html"
-};
-</script>
-
-<div id="splashScreen">
-  <div class="splashCard">
-
-    <p class="eyebrow" id="tourEyebrow"></p>
-
-    <h1 id="propertyTitle"></h1>
-
-    <div class="agentDetails">
-      <div class="agentAvatar">
-        <img id="agentAvatar" src="" alt="Pośrednik">
-      </div>
-
-      <div class="agentInfo">
-        <strong id="agentName"></strong>
-        <span id="agentRole"></span>
-        <span id="agentPhone"></span>
-        <span id="agentEmail"></span>
-      </div>
-    </div>
-
-    <button id="startTour">Rozpocznij spacer</button>
-
-  </div>
-</div>
 
 <div id="pano"></div>
 
@@ -129,43 +84,12 @@ const TOUR_CONFIG = {
   <img class="icon" src="img/minus.png">
 </a>
 
-<div id="vizFooter">
-  <a id="vizFooterLink" href="#" target="_blank" rel="noopener noreferrer"></a>
-</div>
-
-<script src="vendor/screenfull.min.js"></script>
-<script src="vendor/bowser.min.js"></script>
-<script src="vendor/marzipano.js"></script>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
 
 <script src="data.js"></script>
 <script src="index.js"></script>
-
-<script>
-document.title = TOUR_CONFIG.pageTitle;
-
-document.getElementById("tourEyebrow").textContent = TOUR_CONFIG.eyebrow;
-document.getElementById("propertyTitle").textContent = TOUR_CONFIG.propertyTitle;
-
-document.getElementById("agentName").textContent = TOUR_CONFIG.agentName;
-document.getElementById("agentRole").textContent = TOUR_CONFIG.agentRole;
-document.getElementById("agentPhone").textContent = "tel. " + TOUR_CONFIG.agentPhone;
-document.getElementById("agentEmail").textContent = TOUR_CONFIG.agentEmail;
-
-document.getElementById("agentAvatar").src = TOUR_CONFIG.avatarPath;
-
-document.getElementById("vizFooterLink").textContent = TOUR_CONFIG.footerText;
-document.getElementById("vizFooterLink").href = TOUR_CONFIG.footerUrl;
-
-document.getElementById("splashScreen").style.backgroundImage =
-  'radial-gradient(circle at center, rgba(255,255,255,0.08), rgba(0,0,0,0.82)), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)), url("' + TOUR_CONFIG.coverPath + '")';
-
-document.getElementById("startTour").addEventListener("click", function() {
-  document.getElementById("splashScreen").style.opacity = "0";
-  setTimeout(function() {
-    document.getElementById("splashScreen").style.display = "none";
-  }, 350);
-});
-</script>
 
 </body>
 </html>
