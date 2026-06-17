@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mieszkanie 38m2 - Brzeziny</title>
+<title>Mieszkanie 38 m² - Brzeziny</title>
 <meta charset="utf-8">
 <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
 <style> @-ms-viewport { width: device-width; } </style>
 <link rel="stylesheet" href="vendor/reset.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1">
 </head>
+
 <body class="multiple-scenes ">
+
+<script>
+const TOUR_CONFIG = {
+  pageTitle: "Mieszkanie 38 m² - Brzeziny",
+  eyebrow: "Wirtualna prezentacja nieruchomości",
+  propertyTitle: "Mieszkanie 38 m² - Brzeziny",
+
+  agentName: "Anna Janiszewska",
+  agentRole: "Pośrednik nieruchomości",
+  agentPhone: "534 128 789",
+  agentEmail: "anna.janiszewska@nieruchomosci.pl",
+
+  avatarPath: "branding/avatar.png",
+  coverPath: "branding/cover.jpg",
+
+  footerText: "Spacery 360° by Vizprojects",
+  footerUrl: "https://vizprojects.pl/Wirtualne-spacery-3D.html"
+};
+</script>
+
+<div id="splashScreen">
+  <div class="splashCard">
+
+    <p class="eyebrow" id="tourEyebrow"></p>
+
+    <h1 id="propertyTitle"></h1>
+
+    <div class="agentDetails">
+      <div class="agentAvatar">
+        <img id="agentAvatar" src="" alt="Pośrednik">
+      </div>
+
+      <div class="agentInfo">
+        <strong id="agentName"></strong>
+        <span id="agentRole"></span>
+        <span id="agentPhone"></span>
+        <span id="agentEmail"></span>
+      </div>
+    </div>
+
+    <button id="startTour">Rozpocznij spacer</button>
+
+  </div>
+</div>
 
 <div id="pano"></div>
 
@@ -19,28 +64,28 @@
         <li class="text">Przedpokój</li>
       </a>
     
-      <a href="javascript:void(0)" class="scene" data-id="1-balkon">
-        <li class="text">Balkon</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="2-kuchnia">
-        <li class="text">Kuchnia</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="3-azienka">
-        <li class="text">Łazienka</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="4-salon_1">
+      <a href="javascript:void(0)" class="scene" data-id="1-salon_1">
         <li class="text">Salon_1</li>
       </a>
     
-      <a href="javascript:void(0)" class="scene" data-id="5-salon_2">
+      <a href="javascript:void(0)" class="scene" data-id="2-salon_2">
         <li class="text">Salon_2</li>
       </a>
     
-      <a href="javascript:void(0)" class="scene" data-id="6-sypialnia">
+      <a href="javascript:void(0)" class="scene" data-id="3-sypialnia">
         <li class="text">Sypialnia</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-kuchnia">
+        <li class="text">Kuchnia</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-azienka">
+        <li class="text">Łazienka</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-balkon">
+        <li class="text">Balkon</li>
       </a>
     
   </ul>
@@ -84,12 +129,43 @@
   <img class="icon" src="img/minus.png">
 </a>
 
-<script src="vendor/screenfull.min.js" ></script>
-<script src="vendor/bowser.min.js" ></script>
-<script src="vendor/marzipano.js" ></script>
+<div id="vizFooter">
+  <a id="vizFooterLink" href="#" target="_blank" rel="noopener noreferrer"></a>
+</div>
+
+<script src="vendor/screenfull.min.js"></script>
+<script src="vendor/bowser.min.js"></script>
+<script src="vendor/marzipano.js"></script>
 
 <script src="data.js"></script>
 <script src="index.js"></script>
+
+<script>
+document.title = TOUR_CONFIG.pageTitle;
+
+document.getElementById("tourEyebrow").textContent = TOUR_CONFIG.eyebrow;
+document.getElementById("propertyTitle").textContent = TOUR_CONFIG.propertyTitle;
+
+document.getElementById("agentName").textContent = TOUR_CONFIG.agentName;
+document.getElementById("agentRole").textContent = TOUR_CONFIG.agentRole;
+document.getElementById("agentPhone").textContent = "tel. " + TOUR_CONFIG.agentPhone;
+document.getElementById("agentEmail").textContent = TOUR_CONFIG.agentEmail;
+
+document.getElementById("agentAvatar").src = TOUR_CONFIG.avatarPath;
+
+document.getElementById("vizFooterLink").textContent = TOUR_CONFIG.footerText;
+document.getElementById("vizFooterLink").href = TOUR_CONFIG.footerUrl;
+
+document.getElementById("splashScreen").style.backgroundImage =
+  'radial-gradient(circle at center, rgba(255,255,255,0.08), rgba(0,0,0,0.82)), linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)), url("' + TOUR_CONFIG.coverPath + '")';
+
+document.getElementById("startTour").addEventListener("click", function() {
+  document.getElementById("splashScreen").style.opacity = "0";
+  setTimeout(function() {
+    document.getElementById("splashScreen").style.display = "none";
+  }, 350);
+});
+</script>
 
 </body>
 </html>
